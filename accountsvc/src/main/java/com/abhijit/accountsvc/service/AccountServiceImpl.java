@@ -5,9 +5,11 @@ import com.abhijit.accountsvc.dto.AddAccountDTO;
 import com.abhijit.accountsvc.entity.Account;
 import com.abhijit.accountsvc.mapper.AccountMapper;
 import com.abhijit.accountsvc.repo.AccountRepo;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
+@Service
 public class AccountServiceImpl implements AccountService{
     private AccountRepo accountRepo;
     private AccountMapper accountMapper;
