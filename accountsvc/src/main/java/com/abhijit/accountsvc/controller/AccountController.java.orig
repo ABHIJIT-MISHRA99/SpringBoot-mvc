@@ -1,0 +1,29 @@
+package com.abhijit.accountsvc.controller;
+
+import com.abhijit.accountsvc.dto.AccountDTO;
+import com.abhijit.accountsvc.dto.AddAccountDTO;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+<<<<<<< HEAD
+import org.springframework.http.MediaType;
+=======
+>>>>>>> fa5f714 (account svc file)
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+<<<<<<< HEAD
+@RequestMapping(value = "/accounts",produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
+=======
+@RequestMapping("/accounts")
+>>>>>>> fa5f714 (account svc file)
+@Validated
+@Tag(name = "Account Management API",description = "API for all account related operations.")
+public interface AccountController {
+    @PostMapping
+    @Operation(summary = "Create new account")
+    ResponseEntity<AccountDTO> add(@RequestBody @Valid AddAccountDTO accountDTO);
+}

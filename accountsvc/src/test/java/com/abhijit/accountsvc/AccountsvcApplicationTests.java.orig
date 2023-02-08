@@ -1,0 +1,24 @@
+package com.abhijit.accountsvc;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+<<<<<<< HEAD
+//@SpringBootTest
+//class AccountsvcApplicationTests {
+//
+//	@Test
+//	void contextLoads() {
+//	}
+//
+//}
+=======
+@SpringBootTest
+class AccountsvcApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+>>>>>>> fa5f714 (account svc file)
