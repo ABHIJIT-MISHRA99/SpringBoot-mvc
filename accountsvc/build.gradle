@@ -43,6 +43,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	// for xml response
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.3'
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.2'
+
 
 
 	implementation 'org.springframework.retry:spring-retry:2.0.0'

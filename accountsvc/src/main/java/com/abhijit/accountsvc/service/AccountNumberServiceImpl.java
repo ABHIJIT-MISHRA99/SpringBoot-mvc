@@ -25,7 +25,7 @@ public class AccountNumberServiceImpl implements AccountNumberService{
             accountNumber.setAccountNumber(newAcNumber);
 
             accountNumberRepo.save(accountNumber);
-            return String.format("%10d", newAcNumber);
+            return String.format("%010d", newAcNumber);
         }catch (OptimisticLockingFailureException e){
             log.error("exception in account creation.will retry.");
             throw e;
