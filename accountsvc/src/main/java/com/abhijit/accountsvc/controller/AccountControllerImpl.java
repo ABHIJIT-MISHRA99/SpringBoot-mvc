@@ -63,10 +63,11 @@ public class AccountControllerImpl implements AccountController {
     }
 
     @Override
-    public ResponseEntity<List<AccountDTO>> get() {
-        List<AccountDTO> accounts=accountService.get();
+    public ResponseEntity<List<AccountDTO>> getAccounts(String region) {
+        List<AccountDTO> accounts=accountService.getAccounts(region);
         return new ResponseEntity<>(accounts,HttpStatus.OK);
     }
+
 
 
 }

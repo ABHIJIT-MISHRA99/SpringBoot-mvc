@@ -20,5 +20,5 @@ public interface AccountService {
 
     void delete(String accountId);
 
-    List<AccountDTO> get();
+    List<AccountDTO> getAccounts(String region);
 }

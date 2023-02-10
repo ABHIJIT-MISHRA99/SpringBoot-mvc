@@ -43,7 +43,8 @@ public interface AccountController {
 
     @GetMapping
     @Operation(summary = "get all accounts")
-    ResponseEntity<List<AccountDTO>> get();
+    ResponseEntity<List<AccountDTO>> getAccounts(@RequestParam(value = "region",required = false)String region);
+
 
 
 

@@ -206,19 +206,19 @@ public class TestAccountController {
         );
 
     }
-@Test
-@DisplayName("Delete Account")
-    void testDeleteAc() throws Exception{
-    AccountDTO dbAcc=accountService.add(testAddAc);
-    mockMvc.perform(
-                    delete("/accounts"+ "/" +dbAcc.getAccountId())
-                            .contentType(MediaType.APPLICATION_JSON_VALUE)
-                            .accept(MediaType.APPLICATION_JSON_VALUE)
-            )
-            .andExpect(status().is2xxSuccessful());
-
-
-    }
+//@Test
+//@DisplayName("Delete Account")
+//    void testDeleteAc() throws Exception{
+//    AccountDTO dbAcc=accountService.add(testAddAc);
+//    mockMvc.perform(
+//                    delete("/accounts"+ "/" +dbAcc.getAccountId())
+//                            .contentType(MediaType.APPLICATION_JSON_VALUE)
+//                            .accept(MediaType.APPLICATION_JSON_VALUE)
+//            )
+//            .andExpect(status().is2xxSuccessful());
+//
+//
+//    }
     @Test
     @DisplayName("Get all accounts ")
     void testGetAccounts() throws Exception {

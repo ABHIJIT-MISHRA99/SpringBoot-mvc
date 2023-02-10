@@ -13,7 +13,7 @@ public interface AccountMapper {
     @Mapping(target = "accountId",ignore = true)
     @Mapping(target = "version",ignore = true)
     @Mapping(target = "createDate",ignore = true)
-    Account convertAddAcToAc(AddAccountDTO accountDTO);
+    Account convertAddAcToAc(AddAccountDTO addAccountDTO);
     AccountDTO convertAcToAcDto(Account account);
 
     @Mapping(target = "accountId",ignore = true)

@@ -40,7 +40,11 @@ dependencies {
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.0.Final'
 	annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
 	// actuator
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+//	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-actuator
+	implementation 'org.springframework.boot:spring-boot-actuator:3.0.2'
+
 	// for xml response
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.3'
 	// https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310
