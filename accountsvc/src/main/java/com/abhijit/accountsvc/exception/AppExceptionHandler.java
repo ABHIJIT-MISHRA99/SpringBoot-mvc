@@ -33,4 +33,18 @@ public class AppExceptionHandler {
         log.error(exception.getMessage());
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(value = {AccountFileGenException.class,AccountFileUploadException.class})
+    public ResponseEntity<String>handleException(AccountFileGenException exception){
+        log.error(exception.getMessage(),exception);
+        return new ResponseEntity<>(exception.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+
+    }
+
+    @ExceptionHandler(value = Exception.class)
+    public ResponseEntity<String> handleException(Exception exception){
+        log.error(exception.getMessage(), exception);
+        return new ResponseEntity<>(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
 }

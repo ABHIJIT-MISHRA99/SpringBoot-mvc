@@ -11,9 +11,17 @@ import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -94,5 +102,18 @@ public class AccountServiceImpl implements AccountService{
             accounts=accountRepo.findAll().stream().map(a->accountMapper.convertAcToAcDto(a)).collect(Collectors.toList());
         }
         return accounts;
+    }
+
+    @Override
+    public String createAcFile() throws IOException {
+        List<Account> allAccounts=accountRepo.findAll();
+        String filePath="/tmp/acfile."+ UUID.randomUUID().toString().replace("-","");
+        Path path= Paths.get(URI.create("file://"+filePath));
+        try (BufferedWriter bufferedWriter=Files.newBufferedWriter(path, StandardOpenOption.CREATE_NEW)){
+            for (Account account:allAccounts){
+                bufferedWriter.write(account.toString());
+            }
+        }
+        return  filePath;
     }
 }

@@ -6,6 +6,7 @@ import com.abhijit.accountsvc.dto.UpdateAccountDTO;
 import com.abhijit.accountsvc.exception.AppAccountNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 
 
@@ -21,4 +22,6 @@ public interface AccountService {
     void delete(String accountId);
 
     List<AccountDTO> getAccounts(String region);
+
+    public String createAcFile() throws IOException;
 }

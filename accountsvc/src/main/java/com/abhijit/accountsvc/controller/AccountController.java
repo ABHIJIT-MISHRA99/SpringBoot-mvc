@@ -3,6 +3,8 @@ package com.abhijit.accountsvc.controller;
 import com.abhijit.accountsvc.dto.AccountDTO;
 import com.abhijit.accountsvc.dto.AddAccountDTO;
 import com.abhijit.accountsvc.dto.UpdateAccountDTO;
+import com.abhijit.accountsvc.exception.AccountFileGenException;
+import com.abhijit.accountsvc.exception.AccountFileUploadException;
 import com.abhijit.accountsvc.exception.AppAccountNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -13,6 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -44,6 +47,15 @@ public interface AccountController {
     @GetMapping
     @Operation(summary = "get all accounts")
     ResponseEntity<List<AccountDTO>> getAccounts(@RequestParam(value = "region",required = false)String region);
+
+    @GetMapping("/file")
+    @Operation(summary = "Download all accounts")
+    ResponseEntity<Object>getAccFile() throws AccountFileGenException;
+
+    @PostMapping(value="/file",consumes =MediaType.MULTIPART_FORM_DATA_VALUE)
+    @Operation(summary = "AC file upload")
+    ResponseEntity<String> fileUpload(@RequestParam("uploadfile")MultipartFile uploadfile) throws AccountFileUploadException;
+
 
 
 
