@@ -25,7 +25,7 @@ import java.util.List;
 public interface AccountController {
     @PostMapping
     @Operation(summary = "Create new account")
-    ResponseEntity<AccountDTO> add(@RequestBody @Valid AddAccountDTO accountDTO);
+    ResponseEntity<AccountDTO> add(@RequestBody @Valid AddAccountDTO addaccountDTO);
 
     @GetMapping("/{accountId}")
     @Operation(summary = "Get information about a given account")

@@ -24,7 +24,7 @@ public class AddAccountDTO {
     @Schema(description = "Indicates account status",defaultValue = "ACTIVE",allowableValues = "[ACTIVE,BLOCKED,CLOSED]")
     @NotNull
     private AccountStatus accountStatus;
-    @Schema(description = "Redion to which the account belongs")
+    @Schema(description = "Region to which the account belongs")
     @NotNull
     @Length(min=2,max=15)
     private String region;

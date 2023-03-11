@@ -38,9 +38,9 @@ public class AccountControllerImpl implements AccountController {
     }
 
     @Override
-    public ResponseEntity<AccountDTO> add(AddAccountDTO accountDTO) {
-        log.info("account:"+accountDTO);
-        AccountDTO newAc=accountService.add(accountDTO);
+    public ResponseEntity<AccountDTO> add(AddAccountDTO addAccountDTO) {
+        log.info("account:"+addAccountDTO);
+        AccountDTO newAc=accountService.add(addAccountDTO);
         return new ResponseEntity<>(newAc, HttpStatus.CREATED);
 
     }
